@@ -49,9 +49,13 @@ public class StartPanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == button1) {
+			// ieraksta testa sākšanas laiku
+			Main.start = System.currentTimeMillis();
+			//parāda testu
 			Main.showTest();
 		}
 		else {
+			// iziet no programmas
 			System.exit(0);
 		}
 	}

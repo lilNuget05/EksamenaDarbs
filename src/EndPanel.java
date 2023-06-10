@@ -66,7 +66,17 @@ public class EndPanel extends JPanel implements ActionListener {
 		int score = (int) procenti;
 		//pievieno datus
 		t2.setText(score+"% izpildīts pareizi");
-		topPanel.add(t2, BorderLayout.CENTER);		
+		topPanel.add(t2, BorderLayout.CENTER);
+		//aprēķina testa laiku
+		long elapsed = ((Main.finish - Main.start) / 1000);
+		long h = 0;
+		long min = elapsed/60;
+		if (min>=60) {
+			h = min/60;
+			min = min%60;
+		}
+		long sec = elapsed%60;
+		t3.setText(h+"."+min+"."+sec+" laiks");
 		topPanel.add(t3, BorderLayout.EAST);
 	}
 	

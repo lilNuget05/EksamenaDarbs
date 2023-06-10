@@ -259,6 +259,8 @@ public class TestPanel extends JPanel implements ActionListener {
 				saveData();
 				int izvele = JOptionPane.showConfirmDialog(null, "Pabeigt testu?", "Test", JOptionPane.OK_CANCEL_OPTION);
 				if (izvele == 0) {
+					//ieraksta testa beigšanas laiku
+					Main.finish = System.currentTimeMillis();
 					//parada rezultātu
 					Main.showEndResult();
 				}

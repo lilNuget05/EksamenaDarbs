@@ -14,6 +14,8 @@ public class Main {
 	
 	//Testa tagadējais id
 	public static int currentId;
+	// Testa uzsākšanas un beigšanas laiki
+	public static long start, finish;
 	
 	//Metode kas palaiž testa datu ieguvi
 	public static void getTestData() {
