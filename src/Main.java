@@ -6,6 +6,12 @@ public class Main {
 	
 	// Masīvs kurā tiks uzglabāti testa jautājumi
 	public static LinkedList<Object> taskArray = new LinkedList<Object>();
+	//GUI kompnenetes
+	public static Frame f;
+	public static StartPanel pane1;
+	
+	//Testa tagadējais id
+	public static int currentId;
 	
 	//Metode kas palaiž testa datu ieguvi
 	public static void getTestData() {
@@ -101,10 +107,20 @@ public class Main {
 			return 0;
 		}
 		
+	//izveido visus paneļus un gui
+		public static void StartGUI(){
+			f = new Frame();
+			pane1 = new StartPanel();
+			currentId = 1;
+			f.add(pane1);
+		    f.setVisible(true); 
+		}
 	
 	public static void main(String[] args) {
 		// iegūst un saglabā katra testa datus masīvā
 		getTestData();
+		// Uztaisa Sākuma paneli, no kura tiks veiktas tālākās darbības.
+		StartGUI();
 	}
 
 }
