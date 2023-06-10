@@ -10,6 +10,7 @@ public class Main {
 	public static Frame f;
 	public static StartPanel pane1;
 	public static TestPanel pane2;
+	public static EndPanel pane3;
 	
 	//Testa tagadējais id
 	public static int currentId;
@@ -129,6 +130,19 @@ public class Main {
 		//Noņem visus komonentus no frame
 		public static void removePane() {
 			f.getContentPane().removeAll();
+		}
+		
+		//parāda rezultāta un beidzamo paneli
+		public static void showEndResult() {
+			removePane();
+			//Salīdzina atbildes
+			Test.result(taskArray);
+			//pievieno pēdējo rezultātu paneli
+			pane3 = new EndPanel();
+			f.add(pane3);
+			f.validate();
+			f.repaint();
+			
 		}
 		
 	

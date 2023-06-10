@@ -75,6 +75,7 @@ public class TestPanel extends JPanel implements ActionListener {
         
 	}
 	
+	// panelis kas pievieno koponentes topPanel
 	public void addCompTop() {
 		topPanel.setLayout(new BorderLayout(20, 5));
 		topPanel.add(virsrakstsLabel, BorderLayout.WEST);
@@ -82,17 +83,20 @@ public class TestPanel extends JPanel implements ActionListener {
 		topPanel.add(uzdLabel, BorderLayout.CENTER);
 		topPanel.add(pointsLabel, BorderLayout.EAST);
 	}
+	// panelis kas pievieno koponentes descriptionPanel
 	public void addCompDesription() {
 		desriptionPanel.setLayout(new BorderLayout());
 		desriptionPanel.add(descriptionLabel, BorderLayout.NORTH);
 	}
+	// panelis kas pievieno koponentes enterPanel
 	public void addCompSubmit() {
 		enterPanel.setLayout(new BorderLayout());
 		enterPanel.setBorder(BorderFactory.createEmptyBorder(5, 100, 5, 100));
 		submitButton.addActionListener(this);
 		enterPanel.add(submitButton, BorderLayout.CENTER);
 		
-	}	
+	}
+	// panelis kas pievieno koponentes botPanel
 	public void addCompBot() {
 		botPanel.setBorder(BorderFactory.createEmptyBorder(5, 30, 5, 30));
 		botPanel.setLayout(new BorderLayout());
@@ -103,6 +107,7 @@ public class TestPanel extends JPanel implements ActionListener {
 
 	}
 	
+	//metode, kas maina komponenšu atribūšu vērtības atkarībā no id
 	public static void setTestById(LinkedList array) {
 		// Iegūst pareizo testu
 		for(Object el : array) {
@@ -219,7 +224,7 @@ public class TestPanel extends JPanel implements ActionListener {
 		}
 		
 	}
-	
+	//metode, kas saglabā lietotāja atbildi
 	public void saveData() {
 		for(Object element : Main.taskArray) {
 			Test el = (Test) element;
@@ -244,13 +249,18 @@ public class TestPanel extends JPanel implements ActionListener {
 		}
 	}
 	
+	//action listener
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		// ja nospiesta submit poga, sakglabā atbildi un pārnes uz nākamo jautājumu
+		//ja pēdējais jautājums, tad prasa vai beigt testu
 		if (e.getSource() == submitButton) {
 			if(Main.currentId == Main.taskArray.size()) {
 				saveData();
 				int izvele = JOptionPane.showConfirmDialog(null, "Pabeigt testu?", "Test", JOptionPane.OK_CANCEL_OPTION);
 				if (izvele == 0) {
+					//parada rezultātu
+					Main.showEndResult();
 				}
 			}
 			else {
@@ -260,11 +270,13 @@ public class TestPanel extends JPanel implements ActionListener {
 				this.repaint();
 			}
 		}
+		//pārnes uz iepriekšējo jautājumu
 		else if(e.getSource() == backButton) {
 			Main.currentId--;
 			setTestById(Main.taskArray);
 			this.repaint();
 		}
+		//pārnes uz nākamo jautājumu
 		else if(e.getSource() == nextButton) {
 			Main.currentId++;
 			setTestById(Main.taskArray);
