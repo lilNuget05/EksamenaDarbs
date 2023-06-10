@@ -9,6 +9,7 @@ public class Main {
 	//GUI kompnenetes
 	public static Frame f;
 	public static StartPanel pane1;
+	public static TestPanel pane2;
 	
 	//Testa tagadējais id
 	public static int currentId;
@@ -108,13 +109,29 @@ public class Main {
 		}
 		
 	//izveido visus paneļus un gui
-		public static void StartGUI(){
+	public static void StartGUI(){
 			f = new Frame();
 			pane1 = new StartPanel();
+			pane2 = new TestPanel();
 			currentId = 1;
 			f.add(pane1);
 		    f.setVisible(true); 
 		}
+	
+	//parada framā testa paneli
+		public static void showTest() {
+			removePane();
+			//TestPanel.setTestById(taskArray);
+			f.add(pane2);
+			f.validate();
+			f.repaint();
+		}
+		//Noņem visus komonentus no frame
+		public static void removePane() {
+			f.getContentPane().removeAll();
+		}
+		
+	
 	
 	public static void main(String[] args) {
 		// iegūst un saglabā katra testa datus masīvā

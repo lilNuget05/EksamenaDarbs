@@ -49,7 +49,7 @@ public class StartPanel extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == button1) {
-			
+			Main.showTest();
 		}
 		else {
 			System.exit(0);
