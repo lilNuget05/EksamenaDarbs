@@ -220,19 +220,41 @@ public class TestPanel extends JPanel implements ActionListener {
 		
 	}
 	
-	
+	public void saveData() {
+		for(Object element : Main.taskArray) {
+			Test el = (Test) element;
+			if(el.id == Main.currentId) {
+				if(el instanceof TestType1) {
+					for (int i=0;i<radioArray.length;i++) {
+						if(radioArray[i].isSelected()) {
+							((TestType1) element).answer = i;
+						}
+					}
+				}
+				if(el instanceof TestType2) {
+					for (int i=0;i<((TestType2) element).answers.length;i++) {
+						((TestType2) element).answers[i] = boxArray[i].isSelected();
+					}
+				}
+				if(el instanceof TestType3) {
+					((TestType3) element).answer = field.getText();
+				}
+				
+			}
+		}
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submitButton) {
 			if(Main.currentId == Main.taskArray.size()) {
-				
+				saveData();
 				int izvele = JOptionPane.showConfirmDialog(null, "Pabeigt testu?", "Test", JOptionPane.OK_CANCEL_OPTION);
 				if (izvele == 0) {
 				}
 			}
 			else {
-				
+				saveData();
 				Main.currentId++;
 				setTestById(Main.taskArray);
 				this.repaint();
