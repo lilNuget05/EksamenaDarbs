@@ -103,17 +103,150 @@ public class TestPanel extends JPanel implements ActionListener {
 
 	}
 	
+	public static void setTestById(LinkedList array) {
+		// Iegūst pareizo testu
+		for(Object el : array) {
+			Test element = (Test) el;
+			if (element.id == Main.currentId) {
+				// saliek top paneli
+				virsrakstsLabel.setText(element.virsraksts);
+				uzdLabel.setText(Integer.toString(element.id)+". Uzdevums");
+				// saliek desription paneli
+				descriptionLabel.setText(element.apraksts);
+				// saliek atbildes veidu 
+				// done
+				if (element instanceof TestType1) {
+					TestType1 item1 = (TestType1) element;
+					taskPanel.removeAll();
+					taskPanel.setLayout(new GridLayout(2,2));
+					ButtonGroup bg =new ButtonGroup();
+					radioArray = new JRadioButton[item1.varianti.length];
+					for (int i=0;i<item1.varianti.length;i++) {
+						radioArray[i] = new JRadioButton(item1.varianti[i]);
+						if (item1.answer == i) {
+							radioArray[i].setSelected(true);
+						}
+						bg.add(radioArray[i]);
+						
+					}
+					
+					// metode kas add random seciba
+					int v1=0, v2=1, v3=2, v4=3;
+					do {
+						int rand = (int)(Math.random()*4);
+						if (rand == v1) {
+							taskPanel.add(radioArray[rand]);
+							v1 = 10;
+						}
+						else if (rand == v2) {
+							taskPanel.add(radioArray[rand]);
+							v2 = 10;
+						}
+						else if (rand == v3) {
+							taskPanel.add(radioArray[rand]);
+							v3 = 10;
+						}
+						else if (rand == v4) {
+							taskPanel.add(radioArray[rand]);
+							v4 = 10;
+						}
+					} while (v1 == 0 || v2 == 1 || v3 == 2 || v4 == 3);
+					
+				}
+				// done
+				else if (element instanceof TestType2) {
+					TestType2 item2 = (TestType2) element;
+					taskPanel.removeAll();
+					taskPanel.setLayout(new GridLayout(2,2));
+					boxArray = new JCheckBox[item2.varianti.length];
+					int v1=0, v2=1, v3=2, v4=3;
+					for (int i=0;i<item2.varianti.length;i++) {
+						boxArray[i] = new JCheckBox(item2.varianti[i], item2.answers[i]);						
+					}
+					// metode kas add random seciba
+					do {
+						int rand = (int)(Math.random()*4);
+						if (rand == v1) {
+							taskPanel.add(boxArray[rand]);
+							v1 = 10;
+						}
+						else if (rand == v2) {
+							taskPanel.add(boxArray[rand]);
+							v2 = 10;
+						}
+						else if (rand == v3) {
+							taskPanel.add(boxArray[rand]);
+							v3 = 10;
+						}
+						else if (rand == v4)  {
+							taskPanel.add(boxArray[rand]);
+							v4 = 10;
+						}
+					} while (v1 == 0 || v2 == 1 || v3 == 2 || v4 == 3);
+					
+				}
+				//done
+				else {
+					TestType3 item3 = (TestType3) element;
+					taskPanel.removeAll();
+					taskPanel.setLayout(new FlowLayout( FlowLayout.LEFT, 5,5));
+					if (item3.text == null) {
+						taskLabel.setText("");
+					}
+					else {
+						taskLabel.setText(item3.text);
+					}
+					field.setColumns( 20 );
+					field.setText(item3.answer);
+					taskPanel.add(taskLabel);
+					taskPanel.add(field);
+				}
+				
+				// saliek pogam vajadzigo
+				if(Main.currentId == 1) {
+					backButton.setVisible(false);
+					nextButton.setVisible(true);
+				}
+				else if(Main.currentId == array.size()) {
+					backButton.setVisible(true);
+					nextButton.setVisible(false);
+				}
+				else {
+					backButton.setVisible(true);
+					nextButton.setVisible(true);
+				}
+			}
+		}
+		
+	}
+	
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submitButton) {
-			
+			if(Main.currentId == Main.taskArray.size()) {
+				
+				int izvele = JOptionPane.showConfirmDialog(null, "Pabeigt testu?", "Test", JOptionPane.OK_CANCEL_OPTION);
+				if (izvele == 0) {
+				}
+			}
+			else {
+				
+				Main.currentId++;
+				setTestById(Main.taskArray);
+				this.repaint();
+			}
 		}
 		else if(e.getSource() == backButton) {
-			
+			Main.currentId--;
+			setTestById(Main.taskArray);
+			this.repaint();
 		}
 		else if(e.getSource() == nextButton) {
-			
+			Main.currentId++;
+			setTestById(Main.taskArray);
+			this.repaint();
 		}
 	}
 }

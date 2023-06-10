@@ -121,7 +121,7 @@ public class Main {
 	//parada framā testa paneli
 		public static void showTest() {
 			removePane();
-			//TestPanel.setTestById(taskArray);
+			TestPanel.setTestById(taskArray);
 			f.add(pane2);
 			f.validate();
 			f.repaint();
