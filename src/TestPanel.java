@@ -108,7 +108,7 @@ public class TestPanel extends JPanel implements ActionListener {
 	}
 	
 	//metode, kas maina komponenšu atribūšu vērtības atkarībā no id
-	public static void setTestById(LinkedList array) {
+	public static void setTestById(LinkedList<Object> array) {
 		// Iegūst pareizo testu
 		for(Object el : array) {
 			Test element = (Test) el;

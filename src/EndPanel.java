@@ -22,7 +22,7 @@ public class EndPanel extends JPanel implements ActionListener {
 	public static JTextArea midPanel = new JTextArea(14, 22);
 	
 	//bot panel
-	public static JButton btn1 = new JButton("iziet"), btn2 = new JButton("atkārtot");
+	public static JButton btn1 = new JButton("iziet");
 	//EndPanel
 	public EndPanel() {
 		FlowLayout layout = (FlowLayout)getLayout();

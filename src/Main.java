@@ -122,20 +122,20 @@ public class Main {
 		}
 	
 	//parada framā testa paneli
-		public static void showTest() {
+	public static void showTest() {
 			removePane();
 			TestPanel.setTestById(taskArray);
 			f.add(pane2);
 			f.validate();
 			f.repaint();
 		}
-		//Noņem visus komonentus no frame
-		public static void removePane() {
+	//Noņem visus komonentus no frame
+	public static void removePane() {
 			f.getContentPane().removeAll();
 		}
 		
-		//parāda rezultāta un beidzamo paneli
-		public static void showEndResult() {
+	//parāda rezultāta un beidzamo paneli
+	public static void showEndResult() {
 			removePane();
 			//Salīdzina atbildes
 			Test.result(taskArray);

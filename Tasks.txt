@@ -1,36 +1,36 @@
-Virsraksts1/1/1
-Apraksts Teikums1 Teikums2 Teikums3/0
-atbilde1/atbilde2/atbilde3/atbilde4
-Virsraksts2/2/2
-Apraksts Teikums1 Teikums2 Teikums3/1
-atbilde1/atbilde2/atbilde3/atbilde4
-Virsraksts3/3/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts4/4/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts5/5/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts6/6/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts7/7/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts8/8/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts9/9/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts10/10/3
-Apraksts Teikums1 Teikums2 Teikums3/pareizi
-Vai Ir Pareizi?
-Virsraksts11/11/1
-Apraksts Teikums1 Teikums2 Teikums3/0
-atbilde1/atbilde2/atbilde3/atbilde4
-Virsraksts12/12/1
-Apraksts Teikums1 Teikums2 Teikums3/0
-atbilde1/atbilde2/atbilde3/atbilde4
+Objekts1/1/1
+Kurš atslēgvārds tiek izmantots, lai izveidotu klases gadījumu Java?/2
+object/instace/new/create
+Objekts2/2/1
+Ar kuru atslēgvārdu jādefinē mainīgais, ja to grib paslēpt no citām klasēm?/1
+public/private/default/red
+Objekts3/3/1
+Ar kādu modifikātoru var piekļūt klases mainīgajiem un metodēm?/0
+public/private/protected/default
+Objekts4/4/1
+Kurš no šiem NAV objektorientētas programmēšanas princips?/3
+Inheritance/Encapsulation/Abstraction/Sequential execution
+Objekts5/5/1
+Cik objektus var izveidot?/1
+1/vairākus/2/5
+Objekts6/6/1
+Kas nav OOP priekšrocība?/1
+ātrāks un to viegli izmantot/Var izmantot visās programmās/Nodrošina skaidru programmas struktūru/palīdz saglabāt kodu, neatkārtojot sevi
+Objekts7/7/1
+Kāds ir atslēgvārds, kas palīdz norādīt virsklasi?/1
+implements/extends/static/shows
+Objekts8/8/1
+kāds ir atslēgvārds, ja nevēlaties, lai mainīgais tiktu modificēts?/1
+public/final/protected/hidden
+Objekts9/9/1
+Kāds atslēgvārds tiek izmantots, lai izveidotu klasi?/1
+String/class/klass/room
+Objekts10/10/1
+Kā piekļūt mainīgaijam objektā? Objekts: obj/1
+obj:mainīgais/obj.mainīgais/obj(mainīgais)/mainīgais.obj
+Objekts11/11/3
+Kā jādefinē jaunu objektu ford, klasei Car?/Car ford = new Car();
+Atbilde:
+Objekts12/12/2
+Kas ir objekti no dotajām atbildēm?/2
+Test test = new Test();/Plane aircraft = new Plane();/int[] array = new int[2];/int object = 2;
